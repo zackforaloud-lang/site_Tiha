@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Manrope', system-ui, sans-serif;
+    background: #c6d5d8;
+    color: #292d27;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  ::selection {
+    background: #243a30;
+    color: #f3efe6;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #243a30;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+@media (min-width: 1440px) {
+  body { padding: 0 2.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
